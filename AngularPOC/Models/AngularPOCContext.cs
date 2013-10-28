@@ -17,6 +17,11 @@ namespace AngularPOC.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //base.OnModelCreating(modelBuilder);
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AngularPOCContext, Migrations.Configuration>());
+        }
         public DbSet<Todo> Todoes { get; set; }
     }
 }
