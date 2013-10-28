@@ -9,8 +9,7 @@ namespace AngularPOC.Migrations
         {
             AlterColumn("dbo.Todoes", "Text", c => c.String(maxLength: 800));
 
-            foreach (string col in new[] { "Todo", "Priority", "DueDate" })
-                CreateIndex("Todoes", col);
+           
         }
         
         public override void Down()

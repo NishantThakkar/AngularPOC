@@ -17,11 +17,7 @@ namespace AngularPOC.Migrations
                         Priority = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
-            AlterColumn("dbo.Todoes", "Todo", c => c.String(maxLength: 800));
-
-            foreach (string col in new[] { "Todo", "Priority", "DueDate" })
-                CreateIndex("Todoes", col);
-
+         
         }
 
         public override void Down()
